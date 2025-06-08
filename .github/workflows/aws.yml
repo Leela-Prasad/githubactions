@@ -7,11 +7,6 @@ jobs:
   configure_aws:
     name: configure aws
     runs-on: ubuntu-latest
-    environment: dev
-    defaults:
-      run:
-        shell: bash
-        working-directory: terraform
 
     steps:
       - name: Configure AWS cred
