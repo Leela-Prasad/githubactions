@@ -6,7 +6,11 @@ on:
 jobs:
   configure_aws:
     name: configure aws
-    uses: aws-actions/configure-aws-credentials@v2
-    with:
-      role-to-assume: ${{ secrets.ROLE_ARN }}
-      aws-region: "ap-south-1"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure AWS cred
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.ROLE_ARN }}
+          aws-region: "ap-south-1"
