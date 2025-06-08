@@ -16,6 +16,7 @@ jobs:
     name: Job1
     runs-on: ubuntu-latest
     environment: dev
+    needs: configure-aws
     defaults:
       run:
         shell: bash
@@ -24,9 +25,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3.1.0
-
-      - name: Configure AWS Credentials
-        needs: configure-aws
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
