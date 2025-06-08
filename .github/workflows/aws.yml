@@ -1,0 +1,12 @@
+name: AWS Setup
+
+on:
+  workflow_call:
+
+jobs:
+  configure_aws:
+    name: configure aws
+    uses: aws-actions/configure-aws-credentials@v2
+    with:
+      role-to-assume: ${{ secrets.ROLE_ARN }}
+      aws-region: "ap-south-1"
